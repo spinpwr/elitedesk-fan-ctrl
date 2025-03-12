@@ -47,11 +47,11 @@ void setup() {
   Serial.begin(9600);
   Serial.println(F("FAN CONTROLLER"));
   Serial.print(F("Startup pulse... "));
-  OCR1A = 220;
+  OCR1A = 120;
+  OCR1B = 180;
   delay(1000);
   OCR1A = FAN_MIN;
   Serial.println(F("done"));
-  Serial.println(F("Start pyramid... "));
 #endif
   // Set initial PWM duty
   OCR1A = FAN_MIN;
@@ -63,7 +63,7 @@ void loop() {
   ntc_val = analogRead(NTC_PIN);
   duty = map(ntc_val, NTC_MIN, NTC_MAX, 320, 0);
   OCR1A = duty > FAN_MIN ? duty : FAN_MIN;
-  OCR1B = duty;
+  OCR1B = duty > FAN_MIN ? duty : FAN_MIN;
 #ifdef DEBUG
     Serial.print("NTC = ");
     Serial.print(int(ntc_val));

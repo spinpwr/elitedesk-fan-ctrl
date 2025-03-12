@@ -8,8 +8,8 @@ See details on reddit: https://www.reddit.com/r/homelab/comments/su3qpx/elitedes
 Instead of reseting CMOS and taking out the battery everytime I decided to build a fan controller for the PC.
 
 ## BoM
-- Arduino Pro mini 
-(or other small board with at least 1 PWM output)
+- Arduino Pro mini or Digispark ATtiny85
+(or any small board with at least 1 PWM output)
 - NTC or small temp sensor 
 (it needs to fit undet the heatsink)
 - 4pin JTS connector with 1.5 mm pitch
